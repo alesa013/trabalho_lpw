@@ -30,9 +30,29 @@ body {
     height: 100vh; 
 }
 
+.firstitle {
+    color: #ffffff;
+    position: relative;
+    font-size: 30px; 
+    margin-bottom: 0%;
+}
+
+.sectitle {
+    color: #000000;
+    position: relative;
+    font-size: 30px; 
+    margin-bottom: 0%;
+}
+
 /* parágrafos */
-p {
+.firstp {
     color: rgb(255, 255, 255);
-    font-size: 20px;
+    font-size: 15px;
+    margin-top: 6px;
+}
+
+.secp {
+    color: rgb(0, 0, 0);
+    font-size: 15px;
     margin-top: 6px;
 }
