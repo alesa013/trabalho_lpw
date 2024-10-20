@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa</title>
+</head>
+<body>
+    <h1>Assincronismo</h1>
+    <p>
+    <br>
+   1) AJAX (Asynchronous Javascript And XML)<br>É uma técnica que permite a comunicação assíncrona entre o cliente (navegador) e o servidor, permitindo a atualização de partes de uma página web sem recarregá-la por completo.
+    <!-- Exemplo:
+<script>
+    function loadData() {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "data.txt", true);
+    xhr.onload = function () {
+    if (xhr.status === 200) {
+        document.getElementById("content").innerHTML = xhr.responseText;
+            }
+        };
+    xhr.send();
+    }
+</script>
+</head>
+<body>
+  <button onclick="loadData()">Load Data</button>
+  <div id="content"></div>
+</body> 
+Nesse exemplo, ao clicar no botão, o conteúdo de um arquivo data.txt será carregado e exibido no div sem recarregar a página.-->
+    <br>
+
+    2) Promises<br>são uma maneira de lidar com operações assíncronas, fornecendo uma maneira mais clara e eficiente de encadear operações do que callbacks. Uma Promise representa um valor que pode estar disponível agora, no futuro ou nunca.
+    Ela pode ter três estados:<br>
+Pendente (Pending): A operação ainda está em andamento.<br>
+Resolvida (Fulfilled): A operação foi concluída com sucesso.<br>
+Rejeitada (Rejected): A operação falhou.<br>
+<!-- Exemplo:
+let promise = new Promise((resolve, reject) => {
+  let success = true; // Sucesso ou fracasso da operação
+  if (success) {
+    resolve("Deu certo!"); // Promessa cumprida
+  } else {
+    reject("Algo deu errado!"); // Promessa rejeitada
+  }
+});
+
+promise
+  .then(result => console.log(result)) // "Deu certo"
+  .catch(error => console.log(error)); // "Algo deu errado"
+
+Nesse, você faz uma promessa, e o then é chamado se tudo der certo, e o catch se algo der errado. -->
+    <br>
+        
+    3) Fetch API<br>é uma interface moderna para fazer requisições HTTP em JavaScript. Ela substitui a antiga XMLHttpRequest e facilita a comunicação com servidores, permitindo buscar recursos de forma assíncrona. A Fetch API retorna Promises.
+    <!-- Exemplo:
+        fetch('https://api.example.com/data')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json(); // Converte a resposta para JSON
+  })
+  .then(data => {
+    console.log(data); // Aqui você usa os dados da resposta
+  })
+  .catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
+
+    Nesse exemplo, fetch faz uma requisição para o URL dado, retorna uma Promise que resolve em uma resposta e o .then() permite lidar com essa resposta. Se a resposta for bem-sucedida, os dados podem ser processados (exemplo: response.json() para converter para JSON).
+    Se algo der errado, o .catch() lida com erros (por exemplo, falha de rede).
+
+    A Fetch API facilita lidar com dados remotos (como APIs), evitando recarregamento de páginas. -->
+    <br>
+        
+    4) Async / Await<br>é uma sintaxe mais clara e simples para trabalhar com operações assíncronas em JavaScript, que facilita o uso de Promises.
+        O Async o efine que uma função vai trabalhar de forma assíncrona, retornando implicitamente uma Promise. O Await pausa a execução da função até que a Promise seja resolvida ou rejeitada, sem bloquear o restante do código.
+    <!-- Exemplo:
+        async function loadData() {
+  try {
+    let response = await fetch('https://api.example.com/data');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    let data = await response.json(); // Espera os dados serem convertidos para JSON
+    console.log(data); // Usa os dados
+  } catch (error) {
+    console.error('There was a problem with the fetch operation:', error);
+  }
+}
+
+loadData();
+
+Nesse exemplo, o async function define uma função assíncrona, o await fetch() espera pela resolução da Promise do fetch (sem usar .then()),
+o await response.json() espera pela conversão dos dados para JSON e o try/catch lida com erros de forma mais direta, similar ao tratamento de erros em código síncrono. -->
+    <br>
+        
+    5) Quais as vantagens/desvantagens de usar cada uma das opções acima?<br>O AJAX é ompatível com navegadores antigos, permitindo requisições assíncronas, mas com uma sintaxe complicada e difícil de manter.<br>
+    A Fetch API proporciona um código mais limpo e legível com Promises, facilitando o fluxo de requisições.<br>
+    E o async/await torna o código ainda mais sequencial e fácil de entender, simplificando o tratamento de erros com try/catch e exigindo navegadores modernos.<br>
+    </p>
+    
+    <h1>Outros tópicos</h1><br>
+    <p>
+        <br>
+        1) Hoisting<br>Hoisting é o comportamento padrão do JavaScript de mover declarações para o topo.<br>
+        <br>
+        2) Arrow Functions (especialmente diferenças com relação as funções normais)<br>As funções de seta permitem uma sintaxe curta para escrever expressões de função,Você não precisa da function-palavra-chave, da return-palavra-chave e das chaves<br>
+        <br>
+        3) Desestruturação (Destructuring)<br>Podemos ter um array ou objeto com o qual estamos trabalhando, mas precisamos apenas de alguns dos itens contidos neles, A desestruturação facilita a extração apenas do que é necessário.<br>
+        <br>
+        4) Closure<br>Closure é uma linguagem dinâmica que combina interatividade e eficiência em multithreading, com fácil acesso a frameworks Java e suporte a tipos opcionais.<br>
+    </p>
+
+</body>
+</html>
