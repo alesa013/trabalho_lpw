@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type='text/javascript' src='http://files.rafaelwendel.com/jquery.js'></script>
     <title>CEP</title>
 </head>
 <body>
     <h1>Busca de CEP</h1>
     <hr>
-    <input type="text" id="cep" name="cep" maxlength="8" placeholder="Digite seu CEP">
+    <input type="text" id="cep" name="cep" onkeyup="consultaCep(this.value)" placeholder="Digite seu CEP">
     <button>Pesquisar CEP - AJAX</button>
     <!--O botão vai chamar a função-->
     <button onclick="consultaCep()">Pesquisar CEP - Fetch API</button>
